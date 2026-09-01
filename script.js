@@ -24,8 +24,8 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observar cards de projetos e skills
-document.querySelectorAll('.project-card, .skill-card, .about p').forEach(el => {
+// Observar cards de projetos, skills, learning e about
+document.querySelectorAll('.project-card, .skill-card, .learning-card, .about p').forEach(el => {
     observer.observe(el);
 });
 
@@ -47,3 +47,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.querySelectorAll('[id]').forEach(el => {
     el.style.scrollMarginTop = '150px';
 });
+
+// BONUS: Atualizar números binários aleatoriamente
+const binaryDigits = document.querySelectorAll('.binary-digit');
+setInterval(() => {
+    binaryDigits.forEach(digit => {
+        digit.textContent = Math.round(Math.random());
+    });
+}, 3000); // Muda a cada 1 segundo
+
+// Log de inicialização
+console.log('🚀 Portfólio carregado!');
+console.log('🔐 Modo hacker ativado...');
+console.log('💻 Python · FastAPI · Automação');
